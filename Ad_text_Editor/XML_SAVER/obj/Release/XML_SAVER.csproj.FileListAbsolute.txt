@@ -1,0 +1,5 @@
+C:\Users\Ace\source\repos\Ad_text_Editor\XML_SAVER\bin\Release\XML_SAVER.dll
+C:\Users\Ace\source\repos\Ad_text_Editor\XML_SAVER\bin\Release\XML_SAVER.pdb
+C:\Users\Ace\source\repos\Ad_text_Editor\XML_SAVER\obj\Release\XML_SAVER.csproj.CoreCompileInputs.cache
+C:\Users\Ace\source\repos\Ad_text_Editor\XML_SAVER\obj\Release\XML_SAVER.dll
+C:\Users\Ace\source\repos\Ad_text_Editor\XML_SAVER\obj\Release\XML_SAVER.pdb
