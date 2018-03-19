@@ -1,0 +1,207 @@
+﻿@model WebProject.Models.ViewModels.PortfolioViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<section class="home-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-offset-2 col-md-4 col-sm-6 margin-left-setting">
+                <div class="margin-top-150">
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tr>
+                                <td>First Name</td>
+                                <td>@Model.FirstName</td>
+                            </tr>
+                            <tr>
+                                <td>Last Name</td>
+                                <td>@Model.LastName</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>@Model.Email</td>
+                            </tr>
+                            <tr>
+                                <td>Experience</td>
+                                <td>@Model.ExperienceYears year/s</td>
+                            </tr>
+                            <tr>
+                                <td>Contact</td>
+                                <td>@Model.PhoneNumber</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 col-sm-6">
+                <div class="me-image">
+                    <div class="portfolio-image">
+                        <img class="profile-picture" src="@String.Format("data:image/png;base64,{0}", @Model.Image)" alt="">
+                    </div>         
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-space-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="section-title">
+                    <h2>My Experience.</h2>
+                    <div class="divider dark">
+                        <i class="icon-graduation"></i>
+                    </div>
+                    <p class="bigger-font">@Model.Experience</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about section-space-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="section-title">
+                    <h2>About Me.</h2>
+                    <div class="divider dark">
+                        <i class="icon-emotsmile"></i>
+                    </div>
+                    <p>A little something about myself.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="about-me-text margin-top-50">
+                    <p class="bigger-font">@Model.AboutMe</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="about-me-text pattern-bg margin-top-50 margin-bottom-50">
+                    <div class="text-center">
+                        <a class="button button-style button-style-dark button-style-color-2" data-toggle="modal" data-target="#subscribemodal" href="#">Contact</a>
+                    </div>
+                </div>
+
+                <div class="about-me-text">
+
+                    <ul class="social-icon">
+                        <li><a href="@Model.Facebook" target="_parent" class="facebook"><i class="icon-social-facebook"></i></a></li>
+                        <li><a href="@Model.Twitter" target="_parent" class="twitter"><i class="icon-social-twitter"></i></a></li>
+                        <li><a href="#" target="_blank" class="behance"><i class="icon-social-behance"></i></a></li>
+                        <li><a href="#" target="_blank" class="dribbble"><i class="icon-social-dribbble"></i></a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="services" class="services-section section-space-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="section-title">
+                    <h2>My Services.</h2>
+                    <div class="divider dark">
+                        <i class="icon-drop"></i>
+                    </div>
+                    <p class="bigger-font">@Model.Services</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section-space-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="section-title">
+                    <h2>Contact Me.</h2>
+                    <div class="divider dark">
+                        <i class="icon-envelope-open"></i>
+                    </div>
+                    <p>I would like to hear from you!</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="margin-top-30 margin-bottom-50">
+            <div class="row">
+
+                <div class="col-md-offset-3 col-sm-offset-2 col-md-6 col-sm-8">
+
+                    <div class="row">
+                        <div class="contact-us-detail"><a href="#">@Model.Email</a></div>
+                        <form class="contact-us pattern-bg">
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" id="name" class="form-control" placeholder="Your Name">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="email" id="email" class="form-control" placeholder="Your Email">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" id="website" class="form-control" placeholder="Your Website">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" id="address" class="form-control" placeholder="Where are You From?">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <select id="subject" class="form-group form-control">
+                                    <option value="" selected disabled>Subject</option>
+                                    <option>Get to know you</option>
+                                    <option>Job offer</option>
+                                    <option>I Want to General Talk</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <div class="textarea-message form-group">
+                                    <textarea id="message" class="textarea-message form-control" placeholder="Your Message" rows="5"></textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="text-center">
+                                <button type="submit" class="button button-style button-style-dark button-style-color-2">Submit</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>

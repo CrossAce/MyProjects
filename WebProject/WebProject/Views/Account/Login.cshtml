@@ -1,0 +1,61 @@
+﻿@using WebProject.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+<section id="home" class="home">
+    <div class="home-overlay-fluid">
+        <div>
+            <div class="">
+                @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal-override", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group center">
+                        @Html.LabelFor(m => m.Email, new { @class = "" })
+                        <div class="center">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control center" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group center">
+                        @Html.LabelFor(m => m.Password, new { @class = "" })
+                        <div class="center">
+                            @Html.PasswordFor(m => m.Password, new { @class = "center form-control" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group center">
+                        <div class="center">
+                            <div class="checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group center">
+                        <div>
+                            <input type="submit" value="Log in" class="btn btn-default" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+
+</section><!-- End of Banner Section -->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+
+

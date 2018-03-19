@@ -1,0 +1,33 @@
+﻿@using WebProject.Models.ViewModels;
+@model PortfoliosViewModel
+
+@{
+    ViewBag.Title = "View Portfolios";
+}
+<section>
+    <div class="home-overlay-fluid-three">
+        <div class="container">
+            @if (Model.PortfolioViewModels.Count() > 0)
+            {
+                foreach (var mod in Model.PortfolioViewModels)
+                {
+                    <div class="gallery">
+
+                        <a href=@string.Format("/Portfolio/Details/{0}",mod.Id)>
+                            <img src="@string.Format("data:image/png;base64,{0}",mod.Image)" alt="" width="600" height="400">
+                        </a>
+                        <div class="desc">@mod.FirstName @mod.LastName<br />Age: @mod.Age</div>
+                    </div>
+                }
+
+            }
+            else
+            {
+                <h4>There are not portfolios in the database!</h4>
+            }
+        </div>
+    </div>
+</section>
+
+
+

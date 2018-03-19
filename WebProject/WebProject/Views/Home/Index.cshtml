@@ -1,0 +1,59 @@
+﻿@using Microsoft.AspNet.Identity
+
+<section id="home" class="home">
+    <div class="home-overlay-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="main_slider_area">
+                    <div class="slider">
+                        <div class="single_slider wow fadeIn" data-wow-duration="2s">
+                            <h2>HELLO!</h2>
+                            <p>We love our work...</p>
+                            <p>And We're taking it seriously...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@if (!Request.IsAuthenticated)
+{
+    <section id="register" class="register">
+        <div class="container-fullwidth">
+            <div class="row text-center">
+                <div class="col-sm-6 col-xs-6 no-padding">
+                    <div class="single_register single_login">
+                        @Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", _class = "smoth-scroll" })
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-6 no-padding">
+                    <div class="single_register">
+                        @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", _class = "smoth-scroll" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+}
+else
+{
+    <section id="register" class="register">
+        <div class="container-fullwidth">
+            <div class="row text-center">
+                <div class="col-sm-6 col-xs-6 no-padding">
+                    <div class="single_register single_login">
+                        @Html.ActionLink("My Portfolio", "MyPortfolio", "Portfolio", routeValues: null, htmlAttributes: new { id = "registerLink", _class = "smoth-scroll" })
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-6 no-padding">
+                    <div class="single_register">
+                        @Html.ActionLink("All Portfolios", "ViewPortfolios", "Portfolio", routeValues: null, htmlAttributes: new { id = "registerLink", _class = "smoth-scroll" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+

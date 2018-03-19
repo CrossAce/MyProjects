@@ -1,0 +1,52 @@
+﻿@model WebProject.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<section id="home" class="home">
+    <div class="home-overlay-fluid">
+        <div>       
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal-override", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h4 class="center">Create a new account!</h4>
+                    <br/>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group center">
+                        @Html.LabelFor(m => m.Email, new { @class = "" })
+                        <div class="center">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control center" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group center">
+                        @Html.LabelFor(m => m.Password, new { @class = "" })
+                        <div class="center">
+                            @Html.PasswordFor(m => m.Password, new { @class = "center form-control" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group center">
+                        @Html.LabelFor(m=>m.ConfirmPassword)
+                        <div class="center">
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "center form-control" })
+                            @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group center">
+                        <div>
+                            <input type="submit" value="Register" class="btn btn-default" />
+                        </div>
+                    </div>
+                }         
+        </div>
+
+    </div>
+
+</section><!-- End of Banner Section -->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
